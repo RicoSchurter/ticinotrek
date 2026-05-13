@@ -1,0 +1,720 @@
+/* ============================================
+   TICINOTREK SAGL - Stylesheet principale
+   Progetto Formativo Personale - CCOE 2025-2026
+   Rico Schurter - CPC Bellinzona
+   ============================================ */
+
+/* RESET E BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --verde-bosco: #2D6A3F;
+  --verde-prato: #5B9E4B;
+  --oro-sentiero: #E8A435;
+  --grigio-granito: #5B5B5B;
+  --bianco-neve: #F5F5F0;
+  --dark: #2c2c2c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--grigio-granito);
+  background: var(--bianco-neve);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ============================================
+   HEADER E NAVIGATION
+   ============================================ */
+header {
+  background: var(--verde-bosco);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-link img {
+  height: 60px;
+  width: auto;
+  max-width: 280px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--oro-sentiero);
+  border-bottom-color: var(--oro-sentiero);
+}
+
+/* Hamburger menu mobile */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ============================================
+   HERO - usa l'immagine PIXLR completa
+   ============================================ */
+.hero {
+  width: 100%;
+  padding: 0;
+  background: var(--bianco-neve);
+  position: relative;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-cta {
+  text-align: center;
+  padding: 30px 24px;
+  background: white;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--oro-sentiero);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(232,164,53,0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--verde-bosco);
+}
+
+/* ============================================
+   SEZIONI GENERICHE
+   ============================================ */
+section {
+  padding: 80px 24px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--verde-bosco);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--grigio-granito);
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--oro-sentiero);
+  margin: 0 auto 40px;
+  border-radius: 2px;
+}
+
+/* ============================================
+   PRESENTAZIONE HOMEPAGE
+   ============================================ */
+.presentazione {
+  background: white;
+}
+
+.presentazione-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.presentazione-text h2 {
+  color: var(--verde-bosco);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.presentazione-text p {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.presentazione-text .link-azienda {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--verde-bosco);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--oro-sentiero);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+
+.presentazione-text .link-azienda:hover {
+  color: var(--oro-sentiero);
+}
+
+.servizi-mini {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.servizio-card {
+  background: var(--bianco-neve);
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.servizio-card:hover {
+  border-color: var(--verde-prato);
+  transform: translateY(-4px);
+}
+
+.servizio-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.servizio-card h3 {
+  color: var(--verde-bosco);
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.servizio-card p {
+  font-size: 13px;
+  color: var(--grigio-granito);
+}
+
+/* ============================================
+   ESCURSIONI BANNER - usa l'immagine PIXLR completa
+   ============================================ */
+.escursioni-banner {
+  width: 100%;
+  padding: 0;
+  background: var(--bianco-neve);
+}
+
+.escursioni-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.escursioni-content {
+  text-align: center;
+  padding: 30px 24px;
+  background: white;
+}
+
+/* ============================================
+   VIDEO SECTION
+   ============================================ */
+.video-section {
+  background: var(--bianco-neve);
+  text-align: center;
+}
+
+.video-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ============================================
+   CTA FINALE
+   ============================================ */
+.cta-final {
+  background: var(--verde-bosco);
+  color: white;
+  text-align: center;
+  padding: 60px 24px;
+}
+
+.cta-final h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   PAGINA CHI SIAMO
+   ============================================ */
+.page-header {
+  background: var(--verde-bosco);
+  color: white;
+  padding: 80px 24px 60px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.chi-siamo-content {
+  background: white;
+}
+
+.chi-siamo-intro {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.chi-siamo-intro p {
+  margin-bottom: 20px;
+}
+
+.valori {
+  background: var(--bianco-neve);
+}
+
+.valori-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.valore-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  border-top: 4px solid var(--oro-sentiero);
+}
+
+.valore-card h3 {
+  color: var(--verde-bosco);
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.servizi-completi {
+  background: white;
+}
+
+.servizi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.servizio-completo {
+  background: var(--bianco-neve);
+  padding: 40px;
+  border-radius: 12px;
+  border-left: 5px solid var(--verde-prato);
+}
+
+.servizio-completo h3 {
+  color: var(--verde-bosco);
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.servizio-completo ul {
+  margin-top: 16px;
+  padding-left: 20px;
+}
+
+.servizio-completo li {
+  margin-bottom: 6px;
+}
+
+.prodotti-categoria {
+  background: var(--bianco-neve);
+}
+
+.categorie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.categoria-card {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.categoria-card:hover {
+  border-color: var(--oro-sentiero);
+  transform: translateY(-4px);
+}
+
+.categoria-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.categoria-card h3 {
+  color: var(--verde-bosco);
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+/* ============================================
+   PAGINA PRODOTTI
+   ============================================ */
+.prodotti-list {
+  background: white;
+}
+
+.prodotto-card {
+  background: var(--bianco-neve);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.prodotto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.prodotto-image {
+  background: #f5f5f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+.prodotto-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.prodotto-info {
+  padding: 40px;
+}
+
+.prodotto-brand {
+  color: var(--oro-sentiero);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.prodotto-info h2 {
+  color: var(--verde-bosco);
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.prodotto-prezzo {
+  font-size: 2rem;
+  color: var(--verde-bosco);
+  font-weight: 700;
+  margin: 16px 0;
+}
+
+.prodotto-prezzo .old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 1.1rem;
+  margin-right: 10px;
+  font-weight: 400;
+}
+
+.prodotto-info p {
+  margin-bottom: 16px;
+}
+
+.prodotto-specs {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.prodotto-specs li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.prodotto-specs li strong {
+  color: var(--verde-bosco);
+  display: inline-block;
+  min-width: 130px;
+}
+
+.prodotto-specs li:last-child {
+  border-bottom: none;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background: var(--dark);
+  color: #ccc;
+  padding: 60px 24px 24px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-col h4 {
+  color: var(--oro-sentiero);
+  margin-bottom: 16px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-col p,
+.footer-col a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 2;
+  display: block;
+}
+
+.footer-col a:hover {
+  color: var(--oro-sentiero);
+}
+
+.footer-logo {
+  height: 50px;
+  margin-bottom: 16px;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid #555;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--verde-bosco);
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  
+  nav ul.open {
+    display: flex;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.7rem;
+  }
+  
+  .presentazione-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .escursioni-content h2 {
+    font-size: 1.7rem;
+  }
+  
+  .valori-grid,
+  .servizi-grid,
+  .categorie-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .prodotto-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .prodotto-image {
+    min-height: 320px;
+  }
+  
+  .prodotto-info {
+    padding: 24px;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  section {
+    padding: 50px 20px;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  
+  .servizi-mini {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
